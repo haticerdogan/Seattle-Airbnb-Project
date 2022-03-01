@@ -1,2 +1,2 @@
-# Seattle-Airbnb-Project
-Capstone Project
+# Seattle Airbnb Recommender 
+
