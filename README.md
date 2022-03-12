@@ -31,18 +31,32 @@ The process starts with cleaning the data, pre-processing and vectorizing the te
 2) Numerical columns such as cleaning fee, daily price and price for additional people.
 3) Categorical columns such as whether host of a particular listing is a superhost or not, bed type, and property type.
 
+Distribution plot showing the difference of original text length and pre-processed text length:
+
+![text_dist](https://user-images.githubusercontent.com/94992749/158035214-a07e2ade-2046-4090-9aa2-3c9b1ef1f69c.png)
+
+
+Word cloud showing most frequently used words in listing descriptions:
+
+![housecloud](https://user-images.githubusercontent.com/94992749/158035156-61aba935-169a-480c-b3b1-9446205b2fb4.png)
+
+
 ## Results 
+
+![model_imp](https://user-images.githubusercontent.com/94992749/158035056-b6624112-cc1a-4904-a6c1-0f8515010276.png)
 
 Support Vector Regression and Random Forest were the two best performing models on test data with Mean Squared Error of 10.8. Although Random Forest scored 0.11 on cross validation whereas SVR scored 0.10, it is important to evaluate what features contribute the most to booking rates with the two models.
 
 We see that different features have various effects on different models. Price followed by room type and number of bedrooms were the top predictors in SVR model whereas descriptions (NLP text data describing listings), number of reviews and room type were the top predictors in Random Forest. Descriptions have very large effect on booking rates at 12% compared to other features in Random Forest model. However we see that price has less effect 9.5% in SVR compared to descriptions in Random Forest model. We also see that room type is one of the top predictors in both models.
 
+![svr_feat_imp](https://user-images.githubusercontent.com/94992749/158035067-943f3c96-b7d2-4425-9642-16d9bb93363f.png)
 
 The most important features with SVR model:   
 1) Price
 2) Room Type 
 3) Number of Bedrooms
 
+![rf_feat_imp](https://user-images.githubusercontent.com/94992749/158035081-e7191120-1607-4dcf-a144-37a4844dc5bb.png)
 
 The most important features with Random Forest model:                 
 1) Listing Descriptions
@@ -60,4 +74,7 @@ The code is written in Python 3.8. To run the notebooks, you will need to instal
 
 Below are the resources that helped me in some parts of this project. I would like to thank these authors for their work and articles. 
 
-1) 
+1) https://www.analyticsvidhya.com/blog/2021/06/must-known-techniques-for-text-preprocessing-in-nlp/
+2) https://www.kdnuggets.com/2020/07/building-content-based-book-recommendation-engine.html
+
+
